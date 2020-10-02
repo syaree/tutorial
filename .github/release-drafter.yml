@@ -1,0 +1,37 @@
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+template: |
+  ## Ini merupakan koleksi link atau tautan tutorial dari komunitas baik berupa artikel maupun video.
+  Untuk video selengkapnya dapat mengunjungi https://youtube.com/user/akbarpn136
+  Perlu melakukan chat atau berminat gabung, masuk ke tautan berikut ini https://discord.gg/7dTG9sg
+
+  ## Perubahan yang Dilakukan
+  $CHANGES
+categories:
+  - title: '💣 Perubahan Total'
+    label: 'perombakan'
+  - title: '🚀 Hal Baru'
+    label: 'peningkatan'
+  - title: '🐛 Koreksi Bug'
+    label: 'bug'
+  - title: '🔨 Perawatan Berkala'
+    label: 'perawatan'
+  - title: '📝 Dokumentasi'
+    label: 'dokumentasi'
+  - title: '🔗 Pembaruan Dependency'
+    label: 'ketergantungan'
+
+version-resolver:
+  major:
+    labels:
+      - 'perombakan'
+  minor:
+    labels:
+      - 'peningkatan'
+  patch:
+    labels:
+      - 'bug'
+      - 'perawatan'
+      - 'dokumentasi'
+      - 'ketergantungan'
+      - 'keamanan'

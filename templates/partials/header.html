@@ -1,0 +1,39 @@
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="theme-color" content="#212529" />
+
+  <!-- Title Meta Tags -->
+  <title itemprop="name">{% if section %}{{ section.title }}{% else %}{{ page.title }}{% endif %} - {{ config.extra.judul }}</title>
+  <meta property="og:title" content="{% if section %}{{ section.title }}{% else %}{{ page.title }}{% endif %} - {{ config.extra.judul }}" />
+  <meta name="twitter:title" content="{% if section %}{{ section.title }}{% else %}{{ page.title }}{% endif %} - {{ config.extra.judul }}" />
+  <meta itemprop="name" content="{% if section %}{{ section.title }}{% else %}{{ page.title }}{% endif %} - {{ config.extra.judul }}" />
+  <meta name="application-name" content="{% if section %}{{ section.title }}{% else %}{{ page.title }}{% endif %} - {{ config.extra.judul }}" />
+  <meta property="og:site_name" content="{% if section %}{{ section.title }}{% else %}{{ page.title }}{% endif %} - {{ config.extra.judul }}" />
+
+  <!-- Description Meta Tags -->
+  <meta name="description" content="{{ config.extra.judul }} {% if section %}{{ section.description }}{% else %}{{ page.description }}{% endif %}" />
+  <meta itemprop="description" content="{{ config.extra.judul }} {% if section %}{{ section.description }}{% else %}{{ page.description }}{% endif %}" />
+  <meta property="og:description" content="{{ config.extra.judul }} {% if section %}{{ section.description }}{% else %}{{ page.description }}{% endif %}" />
+  <meta name="twitter:description" content="{{ config.extra.judul }} {% if section %}{{ section.description }}{% else %}{{ page.description }}{% endif %}" />
+
+  <!-- Link Meta Tags -->
+  <base href="{% if section %} {{ section.permalink }} {% else %} {{ page.permalink }} {% endif %}">
+  <link rel="canonical" href="{% if section %} {{ section.permalink }} {% else %} {{ page.permalink }} {% endif %}" itemprop="url" />
+  <meta name="url" content="{% if section %} {{ section.permalink }} {% else %} {{ page.permalink }} {% endif %}" />
+  <meta name="twitter:url" content="{% if section %} {{ section.permalink }} {% else %} {{ page.permalink }} {% endif %}" />
+  <meta property="og:url" content="{% if section %} {{ section.permalink }} {% else %} {{ page.permalink }} {% endif %}" />
+
+  <link href="/favicon.png" rel="icon" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Optional CSS -->
+  {% block css %}
+  {% endblock css %}
+</head>

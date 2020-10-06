@@ -11,11 +11,36 @@
 {% include "partials/hero.html" %}
 {% endblock hero %}
 
-<div class="container-fluid">
+<div class="container">
   {% block row %}
-  <div class="row">
-    <div class="col-sm-4 px-0"></div>
-    <div class="col-sm-8 px-sm-0">col-sm-10</div>
+  <div class="row mt-5">
+    <div class="col-md-8">
+      {% block article %}
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Judul Tutorial</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">
+            deskripsi
+          </p>
+          <a href="#" class="card-link">Kunjungi</a>
+        </div>
+      </div>
+      {% endblock article %}
+    </div>
+    <div class="col-md-4">
+      {% block sidebar %}
+      <h4 class="text-uppercase">Kategori Tutorial</h4>
+      <div class="list-group list-group-flush">
+        {% for sec in section.subsections %}
+        {% set section = get_section(path=sec, metadata_only=true) %}
+        <a href="{{ section.permalink }}" class="list-group-item list-group-item-action">
+          {{ section.title }}
+        </a>
+        {% endfor %}
+      </div>
+      {% endblock sidebar %}
+    </div>
   </div>
   {% endblock row %}
 </div>

@@ -4,7 +4,13 @@
 <body>
 
 {% block container %}
+
 {% include "partials/navbar.html" %}
+
+{% block hero %}
+{% include "partials/hero.html" %}
+{% endblock hero %}
+
 <div class="container-fluid">
   {% block row %}
   <div class="row">

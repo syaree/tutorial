@@ -1,0 +1,12 @@
+.hero {
+  background-image: url("/hero.jpg");
+  background-position: center center;
+
+  .row {
+    min-height: 250px;
+  }
+
+  p {
+    font-size: 21px;
+  }
+}

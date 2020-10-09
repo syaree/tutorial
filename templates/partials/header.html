@@ -6,25 +6,25 @@
   <meta name="theme-color" content="#212529" />
 
   <!-- Title Meta Tags -->
-  <title itemprop="name">{% if section %}{{ section.title }}{% else %}{{ page.title }}{% endif %} - {{ config.extra.judul }}</title>
-  <meta property="og:title" content="{% if section %}{{ section.title }}{% else %}{{ page.title }}{% endif %} - {{ config.extra.judul }}" />
-  <meta name="twitter:title" content="{% if section %}{{ section.title }}{% else %}{{ page.title }}{% endif %} - {{ config.extra.judul }}" />
-  <meta itemprop="name" content="{% if section %}{{ section.title }}{% else %}{{ page.title }}{% endif %} - {{ config.extra.judul }}" />
-  <meta name="application-name" content="{% if section %}{{ section.title }}{% else %}{{ page.title }}{% endif %} - {{ config.extra.judul }}" />
-  <meta property="og:site_name" content="{% if section %}{{ section.title }}{% else %}{{ page.title }}{% endif %} - {{ config.extra.judul }}" />
+  <title itemprop="name">{% if section %}{{ section.title }}{% elif page %}{{ page.title }}{% else %}Utama{% endif %} - {{ config.extra.judul }}</title>
+  <meta property="og:title" content="{% if section %}{{ section.title }}{% elif page %}{{ page.title }}{% else %}Utama{% endif %} - {{ config.extra.judul }}" />
+  <meta name="twitter:title" content="{% if section %}{{ section.title }}{% elif page %}{{ page.title }}{% else %}Utama{% endif %} - {{ config.extra.judul }}" />
+  <meta itemprop="name" content="{% if section %}{{ section.title }}{% elif page %}{{ page.title }}{% else %}Utama{% endif %} - {{ config.extra.judul }}" />
+  <meta name="application-name" content="{% if section %}{{ section.title }}{% elif page %}{{ page.title }}{% else %}Utama{% endif %} - {{ config.extra.judul }}" />
+  <meta property="og:site_name" content="{% if section %}{{ section.title }}{% elif page %}{{ page.title }}{% else %}Utama{% endif %} - {{ config.extra.judul }}" />
 
   <!-- Description Meta Tags -->
-  <meta name="description" content="{{ config.extra.judul }} {% if section %}{{ section.description }}{% else %}{{ page.description }}{% endif %}" />
-  <meta itemprop="description" content="{{ config.extra.judul }} {% if section %}{{ section.description }}{% else %}{{ page.description }}{% endif %}" />
-  <meta property="og:description" content="{{ config.extra.judul }} {% if section %}{{ section.description }}{% else %}{{ page.description }}{% endif %}" />
-  <meta name="twitter:description" content="{{ config.extra.judul }} {% if section %}{{ section.description }}{% else %}{{ page.description }}{% endif %}" />
+  <meta name="description" content="{{ config.extra.judul }} {% if section %}{{ section.description }}{% elif page %}{{ page.description }}{% else %}{{ config.extra.deskripsi }}{% endif %}" />
+  <meta itemprop="description" content="{{ config.extra.judul }} {% if section %}{{ section.description }}{% elif page %}{{ page.description }}{% else %}{{ config.extra.deskripsi }}{% endif %}" />
+  <meta property="og:description" content="{{ config.extra.judul }} {% if section %}{{ section.description }}{% elif page %}{{ page.description }}{% else %}{{ config.extra.deskripsi }}{% endif %}" />
+  <meta name="twitter:description" content="{{ config.extra.judul }} {% if section %}{{ section.description }}{% elif page %}{{ page.description }}{% else %}{{ config.extra.deskripsi }}{% endif %}" />
 
   <!-- Link Meta Tags -->
-  <base href="{% if section %} {{ section.permalink }} {% else %} {{ page.permalink }} {% endif %}">
-  <link rel="canonical" href="{% if section %} {{ section.permalink }} {% else %} {{ page.permalink }} {% endif %}" itemprop="url" />
-  <meta name="url" content="{% if section %} {{ section.permalink }} {% else %} {{ page.permalink }} {% endif %}" />
-  <meta name="twitter:url" content="{% if section %} {{ section.permalink }} {% else %} {{ page.permalink }} {% endif %}" />
-  <meta property="og:url" content="{% if section %} {{ section.permalink }} {% else %} {{ page.permalink }} {% endif %}" />
+  <base href="{% if section %} {{ section.permalink }} {% elif page %} {{ page.permalink }} {% endif %}">
+  <link rel="canonical" href="{% if section %} {{ section.permalink }} {% elif page %} {{ page.permalink }} {% endif %}" itemprop="url" />
+  <meta name="url" content="{% if section %} {{ section.permalink }} {% elif page %} {{ page.permalink }} {% endif %}" />
+  <meta name="twitter:url" content="{% if section %} {{ section.permalink }} {% elif page %} {{ page.permalink }} {% endif %}" />
+  <meta property="og:url" content="{% if section %} {{ section.permalink }} {% elif page %} {{ page.permalink }} {% endif %}" />
 
   <link href="/favicon.png" rel="icon" />
 
@@ -33,8 +33,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
+  {% if config.generate_feed %}
+  <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+  {% endif %}
+
   <!-- Optional CSS -->
-  <link rel="stylesheet" href="main.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/main.css" crossorigin="anonymous">
   {% block css %}
   {% endblock css %}
 </head>

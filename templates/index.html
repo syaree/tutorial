@@ -1,3 +1,5 @@
+{% import "macros/posting.html" as post %}
+
 <!doctype html>
 <html lang="en">
 {% include "partials/header.html" %}
@@ -13,38 +15,43 @@
 
 <div class="container">
   {% block row %}
-  <div class="row mt-5">
+  <div class="row my-5">
     <div class="col-md-8">
       {% block article %}
-      {% for sec in section.subsections %}
-        {% set section = get_section(path=sec) %}
-
-        {% for page in section.pages %}
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">{{ page.title }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">
-              {{ page.description }}
-            </p>
-            <a href="{{ page.permalink }}" class="card-link">Kunjungi</a>
-          </div>
-        </div>
-        {% endfor%}
-      {% endfor %}
+      {% for page in paginator.pages %}
+        {{ post::build_posting(page=page) }}
+      {% endfor%}
+      <!-- Paginator -->
+      <div class="clearfix">
+        {% if paginator.previous %}
+        <a class="btn btn-primary float-left" href="{{ paginator.previous }}"> &larr; Tutorial Baru</a>
+        {% endif %}
+        {% if paginator.next %}
+        <a class="btn btn-primary float-right" href="{{ paginator.next }}">Tutorial Lama &rarr;</a>
+        {% endif %}
+      </div>
       {% endblock article %}
     </div>
     <div class="col-md-4">
       {% block sidebar %}
       <h4 class="text-uppercase">Kategori Tutorial</h4>
+
       <div class="list-group list-group-flush">
-        {% for sec in section.subsections %}
-        {% set section = get_section(path=sec, metadata_only=true) %}
-        <a href="{{ section.permalink }}" class="list-group-item list-group-item-action">
-          {{ section.title }}
+      {% set categories = get_taxonomy(kind="kategori") %}
+      {% for item in categories.items%}
+        <a href="{{ item.permalink }}" class="list-group-item list-group-item-action text-capitalize">
+          {{ item.name | replace(from="-", to=" ") }}
         </a>
-        {% endfor %}
+      {% endfor %}
       </div>
+
+      <div class="my-4"></div>
+      <h4 class="text-uppercase">Kata Kunci</h4>
+
+      {% set slugs = get_taxonomy(kind="kaitan") %}
+      {% for slug in slugs.items%}
+      <a href="{{ slug.permalink }}" class="badge badge-dark">#{{ slug.name }}</a>
+      {% endfor %}
       {% endblock sidebar %}
     </div>
   </div>

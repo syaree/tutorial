@@ -11,6 +11,24 @@ highlight_code = true
 # The theme to use for code highlighting.
 highlight_theme = "base16-ocean-dark"
 
+# When set to "true", a feed is automatically generated.
+generate_feed = true
+
+# The filename to use for the feed. Used as the template filename, too.
+# Defaults to "atom.xml", which has a built-in template that renders an Atom 1.0 feed.
+# There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
+feed_filename = "atom.xml"
+
+# The number of articles to include in the feed. All items are included if
+# this limit is not set (the default).
+feed_limit = 10
+
+# The taxonomies to be rendered for the site and their configuration.
+ taxonomies = [
+   {name = "kaitan", feed = true, paginate_by = 5}, # each tag will have its own feed
+   {name = "kategori", feed = true, paginate_by = 5},  # 5 items per page for a term
+ ]
+
 # Various slugification strategies, see below for details
 # Defaults to everything being a slug
 [slugify]
@@ -24,4 +42,5 @@ build_search_index = true
 [extra]
 # Put all your custom variables here
 judul = "Koleksi Tutorial"
+deskripsi = "Koleksi tutorial terdiri dari tutorial dalam bentuk artikel atau video dari komunitas"
 author = "4KB4RPN136"

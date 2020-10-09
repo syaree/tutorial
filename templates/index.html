@@ -16,16 +16,22 @@
   <div class="row mt-5">
     <div class="col-md-8">
       {% block article %}
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Judul Tutorial</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">
-            deskripsi
-          </p>
-          <a href="#" class="card-link">Kunjungi</a>
+      {% for sec in section.subsections %}
+        {% set section = get_section(path=sec) %}
+
+        {% for page in section.pages %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ page.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">
+              {{ page.description }}
+            </p>
+            <a href="{{ page.permalink }}" class="card-link">Kunjungi</a>
+          </div>
         </div>
-      </div>
+        {% endfor%}
+      {% endfor %}
       {% endblock article %}
     </div>
     <div class="col-md-4">

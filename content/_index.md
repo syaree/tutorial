@@ -1,7 +1,8 @@
 +++
 title = "Berbagi Lebih Baik"
 description = "merupakan tempat berbagi link atau tautan berupa tutorial dari komunitas baik artikel ataupun video."
-sort_by = "weight"
+sort_by = "date"
+paginate_by = 5
 +++
 
 ## Ilmu dan Teknologi Cepat Berkembang Melalui Berbagi

@@ -1,0 +1,16 @@
+{% macro build_posting(page) %}
+<div class="card mb-3">
+  <div class="card-body">
+    <h3 class="card-title">{{ page.title }}</h3>
+    <h6 class="card-subtitle mb-2 text-muted">
+      {% for slug in page.taxonomies.kaitan %}
+      <a href="{{ get_taxonomy_url(kind="kaitan", name=slug) }}" class="badge badge-warning">#{{ slug }}</a>
+      {% endfor %}
+    </h6>
+    <p class="card-text">
+        {{ page.content | safe }}
+    </p>
+    <a href="{{ page.extra.tautan }}" class="card-link" target="_blank" rel="nofollow">Kunjungi</a>
+  </div>
+</div>
+{% endmacro hero %}

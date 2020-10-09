@@ -1,0 +1,14 @@
+{% import "macros/hero.html" as hero %}
+{% extends "index.html" %}
+
+{% block hero %}
+{{ hero::build_hero(judul="Kata Kunci") }}
+{% endblock hero %}
+
+{% block article %}
+{% for term in terms %}
+<a href="{{ term.permalink }}" class="badge badge-primary mb-3">
+  <h2>{{ term.name }}</h2>
+</a>
+{% endfor %}
+{% endblock article %}

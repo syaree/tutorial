@@ -1,0 +1,13 @@
+{% import "macros/hero.html" as hero %}
+{% import "macros/posting.html" as post %}
+{% extends "index.html" %}
+
+{% block hero %}
+{{ hero::build_hero(judul="Kata Kunci: ", subjudul=term.name) }}
+{% endblock hero %}
+
+{% block article %}
+{% for page in term.pages %}
+{{ post::build_posting(page=page) }}
+{% endfor %}
+{% endblock article %}

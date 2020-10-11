@@ -2,7 +2,11 @@
     <div class="container py-3">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-10 align-self-center">
+                {% if section %}
                 {{ section.content | safe }}
+                {% elif page %}
+                {{ page.content | safe }}
+                {% endif %}
             </div>
         </div>
     </div>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title> - tensorflow</title>
+	<link href="https://akbarpn136.github.io/tutorial/kaitan/tensorflow/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://akbarpn136.github.io/tutorial/"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2020-05-19T00:00:00+00:00</updated>
+	<id>https://akbarpn136.github.io/tutorial/kaitan/tensorflow/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Hyper-Scale Machine Learning with MinIO and TensorFlow</title>
+		<published>2020-05-19T00:00:00+00:00</published>
+		<updated>2020-05-19T00:00:00+00:00</updated>
+		<link href="https://akbarpn136.github.io/tutorial/post1/" type="text/html"/>
+		<id>https://akbarpn136.github.io/tutorial/post1/</id>
+		<content type="html">&lt;p&gt;To build a hyper-scale pipeline we will have each stage of the pipeline read from MinIO.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Yolo v3 Introduction to object detection with TensorFlow 2</title>
+		<published>2020-04-28T00:00:00+00:00</published>
+		<updated>2020-04-28T00:00:00+00:00</updated>
+		<link href="https://akbarpn136.github.io/tutorial/yolov3/" type="text/html"/>
+		<id>https://akbarpn136.github.io/tutorial/yolov3/</id>
+		<content type="html">&lt;p&gt;When I got started learning YOLO v3, I noticed that it’s really difficult to understand both the concept and 
+implementation.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

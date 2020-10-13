@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title> - recognition</title>
+	<link href="https://akbarpn136.github.io/tutorial/kaitan/recognition/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://akbarpn136.github.io/tutorial/"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2020-08-09T00:00:00+00:00</updated>
+	<id>https://akbarpn136.github.io/tutorial/kaitan/recognition/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Extracting Speech from Video using Python</title>
+		<published>2020-08-09T00:00:00+00:00</published>
+		<updated>2020-08-09T00:00:00+00:00</updated>
+		<link href="https://akbarpn136.github.io/tutorial/speech/" type="text/html"/>
+		<id>https://akbarpn136.github.io/tutorial/speech/</id>
+		<content type="html">&lt;p&gt;how to extract speeches from a video recording file.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

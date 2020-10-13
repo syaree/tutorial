@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://akbarpn136.github.io/tutorial/sitemap.xml

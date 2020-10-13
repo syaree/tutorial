@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title> - state</title>
+	<link href="https://akbarpn136.github.io/tutorial/kaitan/state/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://akbarpn136.github.io/tutorial/"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2020-05-07T00:00:00+00:00</updated>
+	<id>https://akbarpn136.github.io/tutorial/kaitan/state/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Flutter Super State: Simple State Management for Flutter</title>
+		<published>2020-05-07T00:00:00+00:00</published>
+		<updated>2020-05-07T00:00:00+00:00</updated>
+		<link href="https://akbarpn136.github.io/tutorial/flutter-super-state/" type="text/html"/>
+		<id>https://akbarpn136.github.io/tutorial/flutter-super-state/</id>
+		<content type="html">&lt;p&gt;flutter_super_state is a new state management library for Flutter.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

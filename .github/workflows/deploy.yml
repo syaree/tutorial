@@ -15,13 +15,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
 
   build_website:
-    name: shalzz/zola-deploy-action
+    name: Build Website with Zola Action
     runs-on: ubuntu-latest
     steps:
-      # Checkout
-      - uses: actions/checkout@master
-      # Build & deploy
-      - name: shalzz/zola-deploy-action
+      - name: Checkout using action
+        uses: actions/checkout@master
+      - name: Build and deploy using action
         uses: shalzz/zola-deploy-action@v0.12.0
         env:
           # Target branch
